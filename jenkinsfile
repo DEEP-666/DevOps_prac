@@ -2,9 +2,24 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Checkout Code'){
+            steps{
+              git url:'https://github.com/DEEP-666/DevOps_prac.git',branch:'main'
+            }
+        }
+        stage('build') {
             steps {
-                echo 'Hello World'
+                echo 'build'
+            }
+        }
+        stage('test'){
+            steps{
+                echo " test"
+            }
+        }
+        stage('Deploy'){
+            steps{
+                echo " deployment start..."
             }
         }
     }
